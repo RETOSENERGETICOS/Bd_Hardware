@@ -1,0 +1,8 @@
+admin@correo.com
+admin123
+-----------
+gestor@correo.com
+gestor123
+-----------
+user@correo.com
+user123
