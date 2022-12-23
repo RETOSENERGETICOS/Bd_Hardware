@@ -19,6 +19,10 @@ class Tool extends Model
         'dispatchable' => 'boolean'
     ];
 
+    public function des(): BelongsTo {
+        return $this->belongsTo(Des::class);
+    }
+
     public function brand(): BelongsTo {
         return $this->belongsTo(Brand::class);
     }
