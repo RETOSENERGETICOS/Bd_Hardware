@@ -17,7 +17,7 @@
                     <v-form v-model="valid">
                         <v-row>
                             <v-col cols="4">
-                                <v-textarea label="Descripcion" v-model="tool.description" :rows="1" :rules="[rules.required]" disabled></v-textarea>
+                                <v-combobox label="Description" v-model="tool.des" item-text="name" :items="dess" clearable item-value="name"></v-combobox>
                             </v-col>
                             <v-col cols="4">
                                 <v-combobox label="Subgrupo" v-model="tool.group" item-text="name" :items="groups" clearable item-value="name"></v-combobox>
@@ -124,6 +124,7 @@ export default {
         movingQuantity: 0,
         menu: false,
         rules : { required: required },
+        dess: [],
         groups: [],
         families: [],
         brands: [],
@@ -137,7 +138,7 @@ export default {
                 const newItem = {
                     id: this.tool.id,
                     item: this.tool.item,
-                    description: this.tool.description,
+                    des: this.tool.des,
                     measurement: this.tool.measurement,
                     group: this.tool.group,
                     family: this.tool.family,
@@ -177,6 +178,7 @@ export default {
                 }
             }
         })
+        await axios.get('/api/dess', getToken()).then(response => this.dess =  response.data )
         await axios.get('/api/groups', getToken()).then(response => this.groups =  response.data )
         await axios.get('/api/families', getToken()).then(response => this.families = response.data)
         await axios.get('/api/brands', getToken()).then(response => this.brands = response.data)

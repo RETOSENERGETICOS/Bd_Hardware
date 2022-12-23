@@ -15,6 +15,7 @@
                     </v-col>
                 </v-row>
                 <v-row>
+                    <v-col cols="4" v-if="filters.des.active"><v-select v-model="filter.des" label="Descripcion" :items="groups" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.group.active"><v-select v-model="filter.group" label="Sub Grupo" :items="groups" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.brand.active"><v-select v-model="filter.brand" label="Marca" :items="brands" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.family.active"><v-select v-model="filter.family" label="Familia" :items="families" item-text="name" return-object clearable></v-select></v-col>
@@ -38,7 +39,6 @@
                     </v-col>
                     <v-col cols="4" v-if="filters.minStock.active"><v-text-field v-model="filter.minStock" label="Inventario minimo" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.quantity.active"><v-text-field v-model.number="filter.quantity" label="Cantidad" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.description.active"><v-text-field v-model="filter.description" label="Descripcion" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.model.active"><v-text-field v-model="filter.model" label="Modelo" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.serialNumber.active"><v-text-field v-model="filter.serialNumber" label="Serie" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.item.active"><v-text-field v-model="filter.item" label="Item" clearable></v-text-field></v-col>
@@ -66,12 +66,14 @@ export default {
     name: "filters",
     data: () => ({
         panel: 0,
+        des: [{id: 0, name: 'TODOS'}],
         groups: [{id: 0, name: 'TODOS'}],
         brands: [{id: 0, name: 'TODOS'}],
         families: [{id: 0, name: 'TODOS'}],
         users: [{id: 0, email: 'TODOS'}],
         menu: false,
         filter: {
+            des: null,
             group: null,
             brand: null,
             family: null,
@@ -83,7 +85,6 @@ export default {
             dispatchable: false,
             minStock: 0,
             quantity: 0,
-            description: null,
             model: null,
             serialNumber: null,
             item: null,
@@ -136,6 +137,12 @@ export default {
         ...mapGetters('filters', ['filters','activeFilters'])
     },
     created() {
+        axios.get('/api/dess', getToken())
+            .then(response => {
+                this.dess = this.dess.concat(response.data)
+                this.filter.des = this.dess[0]
+            })
+
         axios.get('/api/groups', getToken())
             .then(response => {
                 this.groups = this.groups.concat(response.data)

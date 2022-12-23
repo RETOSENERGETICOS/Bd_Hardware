@@ -30,7 +30,7 @@ export default {
         search: null,
         headers: [
             { text: 'ITEM', value: 'item' },
-            { text: 'Descripcion', value: 'description' },
+            { text: 'Descripcion', value: 'des.name' },
             { text: 'Dimension Principal', value: 'measurement' },
             { text: 'Subgrupo', value: 'group.name' },
             { text: 'Familia', value: 'family.name' },

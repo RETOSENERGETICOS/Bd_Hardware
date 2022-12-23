@@ -15,7 +15,8 @@
             <div class="form-container">
                 <div class="form-column">
                     <div class="form-row">
-                        <v-textarea v-model="tool.description" label="Descripcion" rows="1" :rules="[rules.required]"></v-textarea>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.des" label="Descripcion" :items="dess" item-text="name" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.des" label="Descripcion" :items="dess" item-text="name" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
                         <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.group" label="Sub Grupo" :items="groups" item-text="name" clearable item-value="name"></v-combobox>
@@ -108,11 +109,12 @@ export default {
         menu: false,
         valid: false,
         rules : { required: required },
+        dess: [],
         groups: [],
         families: [],
         brands: [],
         tool: {
-            description: null,
+            des: null,
             group: null,
             family: null,
             brand: null,
@@ -161,7 +163,7 @@ export default {
         },
         clearForm() {
             this.tool = {
-                description: null,
+                des: null,
                 group: null,
                 family: null,
                 brand: null,
@@ -199,6 +201,7 @@ export default {
                 }
             }
         })
+        await axios.get('/api/dess', getToken()).then(response => this.dess =  response.data )
         await axios.get('/api/groups', getToken()).then(response => this.groups =  response.data )
         await axios.get('/api/families', getToken()).then(response => this.families = response.data)
         await axios.get('/api/brands', getToken()).then(response => this.brands = response.data)

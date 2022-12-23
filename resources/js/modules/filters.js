@@ -3,6 +3,7 @@ export default {
     state: {
         items: [],
         filters: {
+            des: { text: 'Descripcion', value: 'des.name', active: true, key: 'des' },
             group: { text: 'Sub Grupo', value: 'group.name' ,active: true, key: 'group' },
             brand: { text: 'Marca', value: 'brand.name', active: true, key: 'brand' },
             family: { text: 'Familia', value: 'family.name', active: true, key: 'family' },
@@ -14,7 +15,6 @@ export default {
             dispatchable: { text: 'Despachable', value: 'dispatchable', active: false, key: 'dispatchable' },
             minStock: { text: 'Inventario minimo', value: 'min_stock', active: false, key: 'min_stock' },
             quantity: { text: 'Cantidad', value: 'quantity', active: false, key: 'quantity' },
-            description: { text: 'Descripcion', value: 'description', active: false, key: 'description' },
             model: { text: 'Modelo', value: 'model', active: false, key: 'model' },
             serialNumber: { text: 'Numero de Serie', value: 'serial_number', active: false, key: 'serial_number' },
             calibrationExpiration: { text: 'Vencimiento de Calibracion', value: 'calibration_expiration', active: false, key: 'calibration_expiration' },
