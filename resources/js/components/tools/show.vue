@@ -28,7 +28,7 @@
                         </v-row>
                         <v-row>
                             <v-col cols="4">
-                                <v-combobox label="Marca" v-model="tool.brand" item-text="name" :items="brands" item-value="name" disabled></v-combobox>
+                                <v-combobox label="Usuario" v-model="tool.usr" item-text="name" :items="usrs" item-value="name" disabled></v-combobox>
                             </v-col>
                             <v-col cols="4">
                                 <v-combobox label="N.Dispositivo" v-model="tool.device" item-text="name" :items="devices" item-value="name" disabled></v-combobox>
@@ -127,7 +127,7 @@ export default {
         dess: [],
         groups: [],
         families: [],
-        brands: [],
+        usrs: [],
         devices: [],
     }),
     methods: {
@@ -143,7 +143,7 @@ export default {
                     measurement: this.tool.measurement,
                     group: this.tool.group,
                     family: this.tool.family,
-                    brand: this.tool.device,
+                    usr: this.tool.device,
                     device: this.tool.model,
                     serial_number: this.tool.serial_number,
                     calibration_expiration: this.tool.calibration_expiration,
@@ -182,7 +182,7 @@ export default {
         await axios.get('/api/dess', getToken()).then(response => this.dess =  response.data )
         await axios.get('/api/groups', getToken()).then(response => this.groups =  response.data )
         await axios.get('/api/families', getToken()).then(response => this.families = response.data)
-        await axios.get('/api/brands', getToken()).then(response => this.brands = response.data)
+        await axios.get('/api/usrs', getToken()).then(response => this.usrs = response.data)
         await axios.get('/api/devices', getToken()).then(response => this.devices = response.data)
         this.loading = false
     },

@@ -34,7 +34,7 @@ class ToolController extends Controller
                     'des' => $tool->des,
                     'group' => $tool->group,
                     'family' => $tool->family,
-                    'brand' => $tool->brand,
+                    'usr' => $tool->usr,
                     'device' => $tool->device,
                     'serial_number' => $tool->serial_number,
                     'calibration_expiration' => $tool->calibration_expiration,
@@ -52,7 +52,7 @@ class ToolController extends Controller
             'des' => $tool->des,
             'group' => $tool->group,
             'family' => $tool->family,
-            'brand' => $tool->brand,
+            'usr' => $tool->usr,
             'device' => $tool->device,
             'serial_number' => $tool->serial_number,
             'calibration_expiration' => $tool->calibration_expiration,
@@ -120,7 +120,7 @@ class ToolController extends Controller
             $des = $this->getDes($request->des);
             $group = $this->getGroup($request->group);
             $family = $this->getFamily($request->family);
-            $brand = $this->getBrand($request->brand);
+            $usr = $this->getUsr($request->usr);
             $device = $this->getDevice($request->device);
             $oldTool = json_encode($this->getValues($tool->toArray(), $tool));
             if ($request->main_localization !== $tool->main_localization) {
@@ -139,7 +139,7 @@ class ToolController extends Controller
                     'des_id' => $des->id ?? null,
                     'group_id' => $group->id ?? null,
                     'family_id' => $family->id ?? null,
-                    'brand_id' => $brand->id ?? null,
+                    'usr_id' => $usr->id ?? null,
                     'device_id' => $device->id ?? null,
                     'serial_number' => $request->serial,
                     'size' => $request->size,
@@ -179,13 +179,13 @@ class ToolController extends Controller
         $des = $this->getDes($request->des);
         $group = $this->getGroup($request->group);
         $family = $this->getFamily($request->family);
-        $brand = $this->getBrand($request->brand);
+        $usr = $this->getUsr($request->usr);
         $device = $this->getDevice($request->device);
         $tool = $request->user()->tools()->create([
             'des_id' => $des->id ?? null,
             'group_id' => $group->id ?? null,
             'family_id' => $family->id ?? null,
-            'brand_id' => $brand->id ?? null,
+            'usr_id' => $usr->id ?? null,
             'device_id' => $device->id ?? null,
             'serial_number' => $request->serial,
             'size' => $request->size,
@@ -208,8 +208,8 @@ class ToolController extends Controller
 
     private function getValues($values, Tool $tool) {
 //        dd($values, $tool);
-        $specialAttributes = ['des_id' => 'des','group_id' => 'group','family_id' => 'family','brand_id' => 'brand','device_id' => 'device'];
-        $names = ['item' => 'Item','des_id' => 'Descripcion','group_id' => 'Sub Grupo','family_id' => 'Familia','brand_id' => 'Marca',
+        $specialAttributes = ['des_id' => 'des','group_id' => 'group','family_id' => 'family','usr_id' => 'usr','device_id' => 'device'];
+        $names = ['item' => 'Item','des_id' => 'Descripcion','group_id' => 'Sub Grupo','family_id' => 'Familia','usr_id' => 'Usuario',
             'device' => 'N.Dispositivo','serial_number' => 'Numero de serie','calibration_expiration' => 'Expiracion de calibracion','dispatchable' => 'Despachable',
             'has_validation' => 'Sujeto a validacion', 'main_localization' => 'Localizacion principal', 'shelf_localization' => 'Localizacion de estante', 'shelf' => 'Estante',
             'measurement' => 'Medida', 'min_stock' => 'Stock minimo', 'quantity' => 'Cantidad', 'comments' => 'Comentarios'];
@@ -232,7 +232,7 @@ class ToolController extends Controller
             'measurement' => $tool->measurement,
             'group' => $tool->group,
             'family' => $tool->family,
-            'brand' => $tool->brand,
+            'usr' => $tool->usr,
             'device' => $tool->device,
             'serial_number' => $tool->serial_number,
             'calibration_expiration' => $tool->calibration_expiration,
@@ -247,7 +247,7 @@ class ToolController extends Controller
     }
 
     public function search(Request $request) {
-        $especialKeys = ['des','group','brand','family','device','user'];
+        $especialKeys = ['des','group','usr','family','device','user'];
         $filters = $request->keys();
         $query = Tool::query();
         foreach($filters as $filter) {
@@ -306,15 +306,15 @@ class ToolController extends Controller
         ]);
     }
 
-    private function getBrand($data)
+    private function getUsr($data)
     {
         if (is_null($data)) {
             return null;
         }
         if (is_array($data)) {
-            return Brand::find($data['id']);
+            return Usr::find($data['id']);
         }
-        return Brand::where('name', $data)->firstOrCreate([
+        return Usr::where('name', $data)->firstOrCreate([
             'name' => $data
         ]);
     }

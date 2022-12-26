@@ -5,7 +5,7 @@ export default {
         filters: {
             des: { text: 'Descripcion', value: 'des.name', active: true, key: 'des' },
             group: { text: 'Sub Grupo', value: 'group.name' ,active: true, key: 'group' },
-            brand: { text: 'Marca', value: 'brand.name', active: true, key: 'brand' },
+            usr: { text: 'Usuario', value: 'usr.name', active: true, key: 'usr' },
             family: { text: 'Familia', value: 'family.name', active: true, key: 'family' },
             device: { text: 'N.Dispositivo', value: 'device.name', active: true, key: 'device' },
             hasValidation: { text: 'Sujeto a validacion', value: 'has_validation', active: false, key: 'has_validation' },

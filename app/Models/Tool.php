@@ -23,8 +23,8 @@ class Tool extends Model
         return $this->belongsTo(Des::class);
     }
 
-    public function brand(): BelongsTo {
-        return $this->belongsTo(Brand::class);
+    public function usr(): BelongsTo {
+        return $this->belongsTo(Usr::class);
     }
 
     public function family(): BelongsTo {

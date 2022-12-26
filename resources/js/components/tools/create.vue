@@ -27,8 +27,8 @@
                         <v-select v-else v-model.trim="tool.family" label="Familia" :items="families" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.brand" label="Marca" :items="brands" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.brand" label="Marca" :items="brands" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.usr" label="Usuario" :items="usrs" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.usr" label="Usuario" :items="usrs" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
                         <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.device" label="N.Dispositivo" :items="devices" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
@@ -112,13 +112,13 @@ export default {
         dess: [],
         groups: [],
         families: [],
-        brands: [],
+        usrs: [],
         devices: [],
         tool: {
             des: null,
             group: null,
             family: null,
-            brand: null,
+            usr: null,
             device: null,
             serial: null,
             calibration_expiration: null,
@@ -167,7 +167,7 @@ export default {
                 des: null,
                 group: null,
                 family: null,
-                brand: null,
+                usr: null,
                 device: null,
                 serial: null,
                 calibrationExpiration: null,
@@ -205,7 +205,7 @@ export default {
         await axios.get('/api/dess', getToken()).then(response => this.dess =  response.data )
         await axios.get('/api/groups', getToken()).then(response => this.groups =  response.data )
         await axios.get('/api/families', getToken()).then(response => this.families = response.data)
-        await axios.get('/api/brands', getToken()).then(response => this.brands = response.data)
+        await axios.get('/api/usrs', getToken()).then(response => this.usrs = response.data)
         await axios.get('/api/devices', getToken()).then(response => this.devices = response.data)
         this.loading = false
     },

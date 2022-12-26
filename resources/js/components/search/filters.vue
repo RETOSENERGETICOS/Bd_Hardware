@@ -17,7 +17,7 @@
                 <v-row>
                     <v-col cols="4" v-if="filters.des.active"><v-select v-model="filter.des" label="Descripcion" :items="groups" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.group.active"><v-select v-model="filter.group" label="Sub Grupo" :items="groups" item-text="name" return-object clearable></v-select></v-col>
-                    <v-col cols="4" v-if="filters.brand.active"><v-select v-model="filter.brand" label="Marca" :items="brands" item-text="name" return-object clearable></v-select></v-col>
+                    <v-col cols="4" v-if="filters.usr.active"><v-select v-model="filter.usr" label="Usuario" :items="usrs" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.family.active"><v-select v-model="filter.family" label="Familia" :items="families" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.device.active"><v-select v-model="filter.device" label="N.Dispositivo" :items="devices" item-text="name" return-object clearable></v-select></v-col>
 
@@ -69,7 +69,7 @@ export default {
         panel: 0,
         des: [{id: 0, name: 'TODOS'}],
         groups: [{id: 0, name: 'TODOS'}],
-        brands: [{id: 0, name: 'TODOS'}],
+        usrs: [{id: 0, name: 'TODOS'}],
         families: [{id: 0, name: 'TODOS'}],
         devices: [{id: 0, name: 'TODOS'}],
         users: [{id: 0, email: 'TODOS'}],
@@ -77,7 +77,7 @@ export default {
         filter: {
             des: null,
             group: null,
-            brand: null,
+            usr: null,
             family: null,
             device: null,
             hasValidation: false,
@@ -149,10 +149,10 @@ export default {
                 this.groups = this.groups.concat(response.data)
                 this.filter.group = this.groups[0]
             })
-        axios.get('/api/brands', getToken())
+        axios.get('/api/usrs', getToken())
             .then(response => {
-                this.brands = this.brands.concat(response.data)
-                this.filter.brand = this.brands[0]
+                this.usrs = this.usrs.concat(response.data)
+                this.filter.usr = this.usrs[0]
             })
         axios.get('/api/families', getToken())
             .then(response => {

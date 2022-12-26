@@ -32,7 +32,7 @@ class CreateProductsTable extends Migration
            $table->timestamps();
         });
 
-        Schema::create('brands', static function(Blueprint $table) {
+        Schema::create('usr', static function(Blueprint $table) {
            $table->id();
            $table->string('name');
            $table->timestamps();
@@ -50,7 +50,7 @@ class CreateProductsTable extends Migration
             $table->string('des_id')->nullable()->constrained();;
             $table->foreignId('group_id')->constrained();
             $table->foreignId('family_id')->constrained();
-            $table->foreignId('brand_id')->constrained();
+            $table->foreignId('usr_id')->constrained();
             $table->foreignId('device_id')->constrained();
             $table->string('serial_number')->unique()->nullable();
             $table->date('calibration_expiration')->nullable();
@@ -79,7 +79,7 @@ class CreateProductsTable extends Migration
         Schema::dropIfExists('dess');
         Schema::dropIfExists('groups');
         Schema::dropIfExists('families');
-        Schema::dropIfExists('brands');
+        Schema::dropIfExists('usrs');
         Schema::dropIfExists('devices');
     }
 }
