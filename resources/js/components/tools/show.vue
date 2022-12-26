@@ -31,7 +31,7 @@
                                 <v-combobox label="Marca" v-model="tool.brand" item-text="name" :items="brands" item-value="name" disabled></v-combobox>
                             </v-col>
                             <v-col cols="4">
-                                <v-text-field label="Modelo" v-model="tool.model"></v-text-field>
+                                <v-combobox label="N.Dispositivo" v-model="tool.device" item-text="name" :items="devices" item-value="name" disabled></v-combobox>
                             </v-col>
                             <v-col cols="4">
                                 <v-text-field label="# Serie" v-model="tool.serial" disabled></v-text-field>
@@ -128,6 +128,7 @@ export default {
         groups: [],
         families: [],
         brands: [],
+        devices: [],
     }),
     methods: {
         async update() {
@@ -142,8 +143,8 @@ export default {
                     measurement: this.tool.measurement,
                     group: this.tool.group,
                     family: this.tool.family,
-                    brand: this.tool.brand,
-                    model: this.tool.model,
+                    brand: this.tool.device,
+                    device: this.tool.model,
                     serial_number: this.tool.serial_number,
                     calibration_expiration: this.tool.calibration_expiration,
                     has_validation: this.tool.has_validation
@@ -182,6 +183,7 @@ export default {
         await axios.get('/api/groups', getToken()).then(response => this.groups =  response.data )
         await axios.get('/api/families', getToken()).then(response => this.families = response.data)
         await axios.get('/api/brands', getToken()).then(response => this.brands = response.data)
+        await axios.get('/api/devices', getToken()).then(response => this.devices = response.data)
         this.loading = false
     },
     components: {

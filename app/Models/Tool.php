@@ -35,6 +35,10 @@ class Tool extends Model
         return $this->belongsTo(Group::class);
     }
 
+    public function device(): BelongsTo {
+        return $this->belongsTo(Device::class);
+    }
+
     public function files(): MorphMany {
         return $this->morphMany(File::class, 'fileable');
     }

@@ -19,6 +19,8 @@
                     <v-col cols="4" v-if="filters.group.active"><v-select v-model="filter.group" label="Sub Grupo" :items="groups" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.brand.active"><v-select v-model="filter.brand" label="Marca" :items="brands" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.family.active"><v-select v-model="filter.family" label="Familia" :items="families" item-text="name" return-object clearable></v-select></v-col>
+                    <v-col cols="4" v-if="filters.device.active"><v-select v-model="filter.device" label="N.Dispositivo" :items="devices" item-text="name" return-object clearable></v-select></v-col>
+
                     <v-col cols="4" v-if="filters.hasValidation.active">
                         <p>Sujeto a validacion</p>
                         <v-radio-group v-model="filter.hasValidation" mandatory row>
@@ -39,7 +41,6 @@
                     </v-col>
                     <v-col cols="4" v-if="filters.minStock.active"><v-text-field v-model="filter.minStock" label="Inventario minimo" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.quantity.active"><v-text-field v-model.number="filter.quantity" label="Cantidad" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.model.active"><v-text-field v-model="filter.model" label="Modelo" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.serialNumber.active"><v-text-field v-model="filter.serialNumber" label="Serie" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.item.active"><v-text-field v-model="filter.item" label="Item" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.user.active"><v-select v-model="filter.user" label="Usuario/User" :items="users" item-text="email" return-object clearable></v-select></v-col>
@@ -70,6 +71,7 @@ export default {
         groups: [{id: 0, name: 'TODOS'}],
         brands: [{id: 0, name: 'TODOS'}],
         families: [{id: 0, name: 'TODOS'}],
+        devices: [{id: 0, name: 'TODOS'}],
         users: [{id: 0, email: 'TODOS'}],
         menu: false,
         filter: {
@@ -77,6 +79,7 @@ export default {
             group: null,
             brand: null,
             family: null,
+            device: null,
             hasValidation: false,
             mainLocalization: null,
             shelfLocalization: null,
@@ -85,7 +88,6 @@ export default {
             dispatchable: false,
             minStock: 0,
             quantity: 0,
-            model: null,
             serialNumber: null,
             item: null,
             user: null,
@@ -142,7 +144,6 @@ export default {
                 this.dess = this.dess.concat(response.data)
                 this.filter.des = this.dess[0]
             })
-
         axios.get('/api/groups', getToken())
             .then(response => {
                 this.groups = this.groups.concat(response.data)
@@ -157,6 +158,11 @@ export default {
             .then(response => {
                 this.families = this.families.concat(response.data)
                 this.filter.family = this.families[0]
+            })
+        axios.get('/api/devices', getToken())
+            .then(response => {
+                this.devices = this.devices.concat(response.data)
+                this.filter.device = this.devices[0]
             })
         axios.get('/api/users', getToken())
           .then(response => {

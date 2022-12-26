@@ -38,6 +38,12 @@ class CreateProductsTable extends Migration
            $table->timestamps();
         });
 
+        Schema::create('devices', static function(Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
+         });
+
         Schema::create('tools', function (Blueprint $table) {
             $table->id();
             $table->string('item')->nullable();
@@ -45,7 +51,7 @@ class CreateProductsTable extends Migration
             $table->foreignId('group_id')->constrained();
             $table->foreignId('family_id')->constrained();
             $table->foreignId('brand_id')->constrained();
-            $table->string('model')->nullable();
+            $table->foreignId('device_id')->constrained();
             $table->string('serial_number')->unique()->nullable();
             $table->date('calibration_expiration')->nullable();
             $table->boolean('dispatchable')->default(false);
@@ -74,5 +80,6 @@ class CreateProductsTable extends Migration
         Schema::dropIfExists('groups');
         Schema::dropIfExists('families');
         Schema::dropIfExists('brands');
+        Schema::dropIfExists('devices');
     }
 }

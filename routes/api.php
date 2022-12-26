@@ -10,6 +10,9 @@ use App\Http\Controllers\Api\{
     DesController,
     GroupController,
     FamilyController,
+    DeviceController,
+    UsrController,
+    SoController,
     BrandController,
     UploadController
 };
@@ -30,6 +33,7 @@ Route::middleware('auth:sanctum')->group(static function() {
         'groups' => GroupController::class,
         'families' => FamilyController::class,
         'brands' => BrandController::class,
+        'devices' => DeviceController::class,
         'uploads' => UploadController::class,
     ]);
 });

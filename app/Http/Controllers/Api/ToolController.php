@@ -186,7 +186,7 @@ class ToolController extends Controller
             'group_id' => $group->id ?? null,
             'family_id' => $family->id ?? null,
             'brand_id' => $brand->id ?? null,
-            'device' => $device->id ?? null,
+            'device_id' => $device->id ?? null,
             'serial_number' => $request->serial,
             'size' => $request->size,
             'calibration_expiration' => $request->has_validation ? $request->calibration_expiration : null,
@@ -208,7 +208,7 @@ class ToolController extends Controller
 
     private function getValues($values, Tool $tool) {
 //        dd($values, $tool);
-        $specialAttributes = ['des_id' => 'des','group_id' => 'group','family_id' => 'family','brand_id' => 'brand','so_id' => 'so'];
+        $specialAttributes = ['des_id' => 'des','group_id' => 'group','family_id' => 'family','brand_id' => 'brand','device_id' => 'device'];
         $names = ['item' => 'Item','des_id' => 'Descripcion','group_id' => 'Sub Grupo','family_id' => 'Familia','brand_id' => 'Marca',
             'device' => 'N.Dispositivo','serial_number' => 'Numero de serie','calibration_expiration' => 'Expiracion de calibracion','dispatchable' => 'Despachable',
             'has_validation' => 'Sujeto a validacion', 'main_localization' => 'Localizacion principal', 'shelf_localization' => 'Localizacion de estante', 'shelf' => 'Estante',

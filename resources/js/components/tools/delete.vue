@@ -46,7 +46,7 @@ export default {
             {text: 'Subgrupo', value: 'group.name'},
             {text: 'Familia', value: 'family.name'},
             {text: 'Marca', value: 'brand.name'},
-            {text: 'Modelo', value: 'model'},
+            {text: 'N.Dispositivo', value: 'device.name'},
             {text: '# Serie', value: 'serial_number'},
             {text: 'Vencimiento de calibracion', value: 'calibration_expiration'},
             {text: 'Sujeto a validacion', value: 'has_validation'},
