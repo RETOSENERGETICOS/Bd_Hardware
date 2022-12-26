@@ -32,7 +32,7 @@ export default {
             { text: 'ITEM', value: 'item' },
             { text: 'Descripcion', value: 'des.name' },
             { text: 'Dimension Principal', value: 'measurement' },
-            { text: 'Subgrupo', value: 'group.name' },
+            { text: 'Marca', value: 'brand.name' },
             { text: 'S Operativo', value: 'so.name' },
             { text: 'Usuario', value: 'usr.name' },
             { text: 'N.Dispositivo', value: 'device.name' },

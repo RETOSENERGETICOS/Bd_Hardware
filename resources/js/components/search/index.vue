@@ -42,7 +42,7 @@ export default {
         loading: false,
         search: null,
         headers: [],
-        specialKeys: ['des','group','so','usr','device'],
+        specialKeys: ['des','brand','so','usr','device'],
         historyHeaders: [
             {text: 'Item', value: 'tool.item'},
             {text: 'S Operativo', value: 'so.name'},

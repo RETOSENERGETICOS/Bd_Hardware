@@ -4,7 +4,7 @@ export default {
         items: [],
         filters: {
             des: { text: 'Descripcion', value: 'des.name', active: true, key: 'des' },
-            group: { text: 'Sub Grupo', value: 'group.name' ,active: true, key: 'group' },
+            brand: { text: 'Marca', value: 'brand.name' ,active: true, key: 'brand' },
             usr: { text: 'Usuario', value: 'usr.name', active: true, key: 'usr' },
             so: { text: 'S Operativo', value: 'so.name', active: true, key: 'so' },
             device: { text: 'N.Dispositivo', value: 'device.name', active: true, key: 'device' },

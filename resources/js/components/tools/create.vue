@@ -19,8 +19,8 @@
                         <v-select v-else v-model.trim="tool.des" label="Descripcion" :items="dess" item-text="name" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.group" label="Sub Grupo" :items="groups" item-text="name" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.group" label="Sub Grupo" :items="groups" item-text="name" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.brand" label="Marca" :items="brands" item-text="name" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.brand" label="Marca" :items="brands" item-text="name" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
                         <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.so" label="S Operativo" :items="sos" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
@@ -110,13 +110,13 @@ export default {
         valid: false,
         rules : { required: required },
         dess: [],
-        groups: [],
+        brands: [],
         sos: [],
         usrs: [],
         devices: [],
         tool: {
             des: null,
-            group: null,
+            brand: null,
             so: null,
             usr: null,
             device: null,
@@ -165,7 +165,7 @@ export default {
         clearForm() {
             this.tool = {
                 des: null,
-                group: null,
+                brand: null,
                 so: null,
                 usr: null,
                 device: null,
@@ -203,7 +203,7 @@ export default {
             }
         })
         await axios.get('/api/dess', getToken()).then(response => this.dess =  response.data )
-        await axios.get('/api/groups', getToken()).then(response => this.groups =  response.data )
+        await axios.get('/api/brands', getToken()).then(response => this.brands =  response.data )
         await axios.get('/api/sos', getToken()).then(response => this.sos = response.data)
         await axios.get('/api/usrs', getToken()).then(response => this.usrs = response.data)
         await axios.get('/api/devices', getToken()).then(response => this.devices = response.data)

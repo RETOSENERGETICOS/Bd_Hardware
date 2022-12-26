@@ -32,7 +32,7 @@ class ToolController extends Controller
                     'item' => $tool->item,
                     'measurement' => $tool->measurement,
                     'des' => $tool->des,
-                    'group' => $tool->group,
+                    'brand' => $tool->brand,
                     'so' => $tool->so,
                     'usr' => $tool->usr,
                     'device' => $tool->device,
@@ -50,7 +50,7 @@ class ToolController extends Controller
             'item' => $tool->item,
             'measurement' => $tool->measurement,
             'des' => $tool->des,
-            'group' => $tool->group,
+            'brand' => $tool->brand,
             'so' => $tool->so,
             'usr' => $tool->usr,
             'device' => $tool->device,
@@ -118,7 +118,7 @@ class ToolController extends Controller
         DB::beginTransaction();
         try {
             $des = $this->getDes($request->des);
-            $group = $this->getGroup($request->group);
+            $brand = $this->getBrand($request->brand);
             $so = $this->getSo($request->so);
             $usr = $this->getUsr($request->usr);
             $device = $this->getDevice($request->device);
@@ -137,7 +137,7 @@ class ToolController extends Controller
             } else {
                 $tool->update([
                     'des_id' => $des->id ?? null,
-                    'group_id' => $group->id ?? null,
+                    'brand_id' => $brand->id ?? null,
                     'so_id' => $so->id ?? null,
                     'usr_id' => $usr->id ?? null,
                     'device_id' => $device->id ?? null,
@@ -177,13 +177,13 @@ class ToolController extends Controller
 
     private function createTool(Request $request) {
         $des = $this->getDes($request->des);
-        $group = $this->getGroup($request->group);
+        $brand = $this->getBrand($request->brand);
         $so = $this->getSo($request->so);
         $usr = $this->getUsr($request->usr);
         $device = $this->getDevice($request->device);
         $tool = $request->user()->tools()->create([
             'des_id' => $des->id ?? null,
-            'group_id' => $group->id ?? null,
+            'brand_id' => $brand->id ?? null,
             'so_id' => $so->id ?? null,
             'usr_id' => $usr->id ?? null,
             'device_id' => $device->id ?? null,
@@ -208,8 +208,8 @@ class ToolController extends Controller
 
     private function getValues($values, Tool $tool) {
 //        dd($values, $tool);
-        $specialAttributes = ['des_id' => 'des','group_id' => 'group','so_id' => 'so','usr_id' => 'usr','device_id' => 'device'];
-        $names = ['item' => 'Item','des_id' => 'Descripcion','group_id' => 'Sub Grupo','so_id' => 'S Operativo','usr_id' => 'Usuario',
+        $specialAttributes = ['des_id' => 'des','brand_id' => 'brand','so_id' => 'so','usr_id' => 'usr','device_id' => 'device'];
+        $names = ['item' => 'Item','des_id' => 'Descripcion','brand_id' => 'Marca','so_id' => 'S Operativo','usr_id' => 'Usuario',
             'device' => 'N.Dispositivo','serial_number' => 'Numero de serie','calibration_expiration' => 'Expiracion de calibracion','dispatchable' => 'Despachable',
             'has_validation' => 'Sujeto a validacion', 'main_localization' => 'Localizacion principal', 'shelf_localization' => 'Localizacion de estante', 'shelf' => 'Estante',
             'measurement' => 'Medida', 'min_stock' => 'Stock minimo', 'quantity' => 'Cantidad', 'comments' => 'Comentarios'];
@@ -230,7 +230,7 @@ class ToolController extends Controller
             'item' => $tool->item,
             'des' => $tool->des,
             'measurement' => $tool->measurement,
-            'group' => $tool->group,
+            'brand' => $tool->brand,
             'so' => $tool->so,
             'usr' => $tool->usr,
             'device' => $tool->device,
@@ -247,7 +247,7 @@ class ToolController extends Controller
     }
 
     public function search(Request $request) {
-        $especialKeys = ['des','group','usr','so','device','user'];
+        $especialKeys = ['des','brand','usr','so','device','user'];
         $filters = $request->keys();
         $query = Tool::query();
         foreach($filters as $filter) {
@@ -280,15 +280,15 @@ class ToolController extends Controller
         ]);
     }
 
-    private function getGroup($data)
+    private function getBrand($data)
     {
         if (is_null($data)) {
             return null;
         }
         if (is_array($data)) {
-            return Group::find($data['id']);
+            return Brand::find($data['id']);
         }
-        return Group::where('name', $data)->firstOrCreate([
+        return Brand::where('name', $data)->firstOrCreate([
             'name' => $data
         ]);
     }

@@ -31,8 +31,8 @@ class Tool extends Model
         return $this->belongsTo(So::class);
     }
 
-    public function group(): BelongsTo {
-        return $this->belongsTo(Group::class);
+    public function brand(): BelongsTo {
+        return $this->belongsTo(Brand::class);
     }
 
     public function device(): BelongsTo {

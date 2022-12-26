@@ -15,8 +15,8 @@
                     </v-col>
                 </v-row>
                 <v-row>
-                    <v-col cols="4" v-if="filters.des.active"><v-select v-model="filter.des" label="Descripcion" :items="groups" item-text="name" return-object clearable></v-select></v-col>
-                    <v-col cols="4" v-if="filters.group.active"><v-select v-model="filter.group" label="Sub Grupo" :items="groups" item-text="name" return-object clearable></v-select></v-col>
+                    <v-col cols="4" v-if="filters.des.active"><v-select v-model="filter.des" label="Descripcion" :items="dess" item-text="name" return-object clearable></v-select></v-col>
+                    <v-col cols="4" v-if="filters.brand.active"><v-select v-model="filter.brand" label="Marca" :items="brands" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.usr.active"><v-select v-model="filter.usr" label="Usuario" :items="usrs" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.so.active"><v-select v-model="filter.so" label="S Operativo" :items="sos" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.device.active"><v-select v-model="filter.device" label="N.Dispositivo" :items="devices" item-text="name" return-object clearable></v-select></v-col>
@@ -68,7 +68,7 @@ export default {
     data: () => ({
         panel: 0,
         des: [{id: 0, name: 'TODOS'}],
-        groups: [{id: 0, name: 'TODOS'}],
+        brands: [{id: 0, name: 'TODOS'}],
         usrs: [{id: 0, name: 'TODOS'}],
         sos: [{id: 0, name: 'TODOS'}],
         devices: [{id: 0, name: 'TODOS'}],
@@ -76,7 +76,7 @@ export default {
         menu: false,
         filter: {
             des: null,
-            group: null,
+            brand: null,
             usr: null,
             so: null,
             device: null,
@@ -144,10 +144,10 @@ export default {
                 this.dess = this.dess.concat(response.data)
                 this.filter.des = this.dess[0]
             })
-        axios.get('/api/groups', getToken())
+        axios.get('/api/brands', getToken())
             .then(response => {
-                this.groups = this.groups.concat(response.data)
-                this.filter.group = this.groups[0]
+                this.brands = this.brands.concat(response.data)
+                this.filter.brand = this.brands[0]
             })
         axios.get('/api/usrs', getToken())
             .then(response => {

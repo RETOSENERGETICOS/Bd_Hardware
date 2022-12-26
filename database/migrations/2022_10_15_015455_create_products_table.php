@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->timestamps();
         });
         
-        Schema::create('groups', static function(Blueprint $table) {
+        Schema::create('brands', static function(Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->timestamps();
@@ -48,7 +48,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('item')->nullable();
             $table->string('des_id')->nullable()->constrained();;
-            $table->foreignId('group_id')->constrained();
+            $table->foreignId('brand_id')->constrained();
             $table->foreignId('so_id')->constrained();
             $table->foreignId('usr_id')->constrained();
             $table->foreignId('device_id')->constrained();
@@ -77,7 +77,7 @@ class CreateProductsTable extends Migration
     {
         Schema::dropIfExists('tools');
         Schema::dropIfExists('dess');
-        Schema::dropIfExists('groups');
+        Schema::dropIfExists('brands');
         Schema::dropIfExists('sos');
         Schema::dropIfExists('usrs');
         Schema::dropIfExists('devices');

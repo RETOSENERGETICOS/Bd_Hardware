@@ -20,7 +20,7 @@
                                 <v-combobox label="Description" v-model="tool.des" item-text="name" :items="dess" clearable item-value="name"></v-combobox>
                             </v-col>
                             <v-col cols="4">
-                                <v-combobox label="Subgrupo" v-model="tool.group" item-text="name" :items="groups" clearable item-value="name"></v-combobox>
+                                <v-combobox label="Marca" v-model="tool.brand" item-text="name" :items="brands" clearable item-value="name"></v-combobox>
                             </v-col>
                             <v-col cols="4">
                                 <v-combobox label="S Operativo" v-model="tool.so" item-text="name" :items="sos" :rules="[rules.required]" clearable item-value="name" disabled></v-combobox>
@@ -125,7 +125,7 @@ export default {
         menu: false,
         rules : { required: required },
         dess: [],
-        groups: [],
+        brands: [],
         sos: [],
         usrs: [],
         devices: [],
@@ -141,7 +141,7 @@ export default {
                     item: this.tool.item,
                     des: this.tool.des,
                     measurement: this.tool.measurement,
-                    group: this.tool.group,
+                    brand: this.tool.brand,
                     so: this.tool.so,
                     usr: this.tool.device,
                     device: this.tool.model,
@@ -180,7 +180,7 @@ export default {
             }
         })
         await axios.get('/api/dess', getToken()).then(response => this.dess =  response.data )
-        await axios.get('/api/groups', getToken()).then(response => this.groups =  response.data )
+        await axios.get('/api/brands', getToken()).then(response => this.brands =  response.data )
         await axios.get('/api/sos', getToken()).then(response => this.sos = response.data)
         await axios.get('/api/usrs', getToken()).then(response => this.usrs = response.data)
         await axios.get('/api/devices', getToken()).then(response => this.devices = response.data)
