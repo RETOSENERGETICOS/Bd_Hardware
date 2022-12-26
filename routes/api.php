@@ -31,7 +31,7 @@ Route::middleware('auth:sanctum')->group(static function() {
         'tools' => ToolController::class,
         'dess' => DesController::class,
         'groups' => GroupController::class,
-        'families' => FamilyController::class,
+        'sos' => SoController::class,
         'usrs' => UsrController::class,
         'devices' => DeviceController::class,
         'uploads' => UploadController::class,

@@ -18,7 +18,7 @@
                     <v-col cols="4" v-if="filters.des.active"><v-select v-model="filter.des" label="Descripcion" :items="groups" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.group.active"><v-select v-model="filter.group" label="Sub Grupo" :items="groups" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.usr.active"><v-select v-model="filter.usr" label="Usuario" :items="usrs" item-text="name" return-object clearable></v-select></v-col>
-                    <v-col cols="4" v-if="filters.family.active"><v-select v-model="filter.family" label="Familia" :items="families" item-text="name" return-object clearable></v-select></v-col>
+                    <v-col cols="4" v-if="filters.so.active"><v-select v-model="filter.so" label="S Operativo" :items="sos" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.device.active"><v-select v-model="filter.device" label="N.Dispositivo" :items="devices" item-text="name" return-object clearable></v-select></v-col>
 
                     <v-col cols="4" v-if="filters.hasValidation.active">
@@ -70,7 +70,7 @@ export default {
         des: [{id: 0, name: 'TODOS'}],
         groups: [{id: 0, name: 'TODOS'}],
         usrs: [{id: 0, name: 'TODOS'}],
-        families: [{id: 0, name: 'TODOS'}],
+        sos: [{id: 0, name: 'TODOS'}],
         devices: [{id: 0, name: 'TODOS'}],
         users: [{id: 0, email: 'TODOS'}],
         menu: false,
@@ -78,7 +78,7 @@ export default {
             des: null,
             group: null,
             usr: null,
-            family: null,
+            so: null,
             device: null,
             hasValidation: false,
             mainLocalization: null,
@@ -95,7 +95,7 @@ export default {
         },
         historyHeaders: [
             {text: 'Item', value: 'tool.item'},
-            {text: 'Familia', value: 'family.name'},
+            {text: 'S Operativo', value: 'so.name'},
             {text: 'Fecha', value: 'created_at'},
             {text: 'Ejecutor', value: 'user.email'},
             {text: 'Actividad', value: 'comment'},
@@ -154,10 +154,10 @@ export default {
                 this.usrs = this.usrs.concat(response.data)
                 this.filter.usr = this.usrs[0]
             })
-        axios.get('/api/families', getToken())
+        axios.get('/api/sos', getToken())
             .then(response => {
-                this.families = this.families.concat(response.data)
-                this.filter.family = this.families[0]
+                this.sos = this.sos.concat(response.data)
+                this.filter.so = this.sos[0]
             })
         axios.get('/api/devices', getToken())
             .then(response => {

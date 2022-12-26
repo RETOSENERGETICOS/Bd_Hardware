@@ -27,8 +27,8 @@ class Tool extends Model
         return $this->belongsTo(Usr::class);
     }
 
-    public function family(): BelongsTo {
-        return $this->belongsTo(Family::class);
+    public function so(): BelongsTo {
+        return $this->belongsTo(So::class);
     }
 
     public function group(): BelongsTo {

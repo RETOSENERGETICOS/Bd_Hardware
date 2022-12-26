@@ -44,7 +44,7 @@ export default {
             {text: 'Descripcion', value: 'description'},
             {text: 'Dimension Principal', value: 'measurement'},
             {text: 'Subgrupo', value: 'group.name'},
-            {text: 'Familia', value: 'family.name'},
+            {text: 'S Operativo', value: 'so.name'},
             {text: 'Usuario', value: 'usr.name'},
             {text: 'N.Dispositivo', value: 'device.name'},
             {text: '# Serie', value: 'serial_number'},

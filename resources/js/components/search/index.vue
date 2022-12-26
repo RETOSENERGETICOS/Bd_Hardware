@@ -42,10 +42,10 @@ export default {
         loading: false,
         search: null,
         headers: [],
-        specialKeys: ['des','group','family','usr','device'],
+        specialKeys: ['des','group','so','usr','device'],
         historyHeaders: [
             {text: 'Item', value: 'tool.item'},
-            {text: 'Familia', value: 'family.name'},
+            {text: 'S Operativo', value: 'so.name'},
             {text: 'Fecha', value: 'created_at'},
             {text: 'Ejecutor', value: 'user.email'},
             {text: 'Actividad', value: 'comment'},

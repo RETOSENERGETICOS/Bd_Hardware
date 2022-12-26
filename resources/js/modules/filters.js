@@ -6,7 +6,7 @@ export default {
             des: { text: 'Descripcion', value: 'des.name', active: true, key: 'des' },
             group: { text: 'Sub Grupo', value: 'group.name' ,active: true, key: 'group' },
             usr: { text: 'Usuario', value: 'usr.name', active: true, key: 'usr' },
-            family: { text: 'Familia', value: 'family.name', active: true, key: 'family' },
+            so: { text: 'S Operativo', value: 'so.name', active: true, key: 'so' },
             device: { text: 'N.Dispositivo', value: 'device.name', active: true, key: 'device' },
             hasValidation: { text: 'Sujeto a validacion', value: 'has_validation', active: false, key: 'has_validation' },
             mainLocalization: { text: 'Localizacion principal', value: 'main_localization', active: false, key: 'main_localization' },
