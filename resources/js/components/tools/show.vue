@@ -34,7 +34,7 @@
                                 <v-combobox label="N.Dispositivo" v-model="tool.device" item-text="name" :items="devices" item-value="name" disabled></v-combobox>
                             </v-col>
                             <v-col cols="4">
-                                <v-text-field label="# Serie" v-model="tool.serial" disabled></v-text-field>
+                                <v-text-field label="N de Serie" v-model="tool.serial" disabled></v-text-field>
                             </v-col>
                         </v-row>
                             <v-col cols="4">

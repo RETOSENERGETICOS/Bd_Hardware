@@ -35,7 +35,7 @@ export default {
             { text: 'S Operativo', value: 'so.name' },
             { text: 'Usuario', value: 'usr.name' },
             { text: 'N.Dispositivo', value: 'device.name' },
-            { text: '# Serie', value: 'serial_number' },
+            { text: 'N de Serie', value: 'serial_number' },
             { text: '', value: 'edit' }
         ]
     }),
