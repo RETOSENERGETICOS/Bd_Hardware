@@ -56,9 +56,6 @@
                     <div class="form-row">
                         <v-textarea v-model="tool.comments" label="Comentarios"></v-textarea>
                     </div>
-                    <div class="form-row">
-                        <file-pond name="documents" ref="documents" label-idle="Archivos" accepted-file-types="application/pdf" @processfile="onProcessFile" :allow-multiple="true"></file-pond>
-                    </div>
                 </div>
             </div>
         </v-form>
@@ -99,7 +96,6 @@ export default {
             installation: null,
             min_stock: null,
             quantity: null,
-            documents: [],
             comments: null
         }
     }),
@@ -145,7 +141,6 @@ export default {
                 installation: null,
                 minStock: null,
                 quantity: null,
-                documents: [],
                 comments: null
             }
             this.$refs.documents.removeFiles()

@@ -61,9 +61,6 @@
                             <v-col cols="4">
                                 <v-textarea label="Comentarios" v-model="tool.comments" :rows="1"></v-textarea>
                             </v-col>
-                            <v-col cols="4">
-                                <file-pond name="documents" ref="documents" label-idle="Archivos" accepted-file-types="application/pdf" :disabled="true"></file-pond>
-                            </v-col>
                         </v-row>
                     </v-form>
                 </v-card-text>
