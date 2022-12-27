@@ -21,9 +21,9 @@
                     <v-col cols="4" v-if="filters.so.active"><v-select v-model="filter.so" label="S Operativo" :items="sos" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.device.active"><v-select v-model="filter.device" label="N.Dispositivo" :items="devices" item-text="name" return-object clearable></v-select></v-col>
 
-                    <v-col cols="4" v-if="filters.mainLocalization.active"><v-text-field v-model="filter.mainLocalization" label="Localizacion principal" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.shelfLocalization.active"><v-text-field v-model="filter.shelfLocalization" label="Localizacion de estante" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.shelf.active"><v-text-field v-model="filter.shelf" label="Estante" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.model.active"><v-text-field v-model="filter.model" label="Modelo" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.processor.active"><v-text-field v-model="filter.processor" label="Procesador" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.installation.active"><v-text-field v-model="filter.installation" label="F. Instalacion" clearable></v-text-field></v-col>
 
                     <v-col cols="4" v-if="filters.quantity.active"><v-text-field v-model.number="filter.quantity" label="Cantidad" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.serialNumber.active"><v-text-field v-model="filter.serialNumber" label="Serie" clearable></v-text-field></v-col>
