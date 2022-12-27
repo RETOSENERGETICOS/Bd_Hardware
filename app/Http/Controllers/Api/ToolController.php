@@ -192,7 +192,7 @@ class ToolController extends Controller
 //        dd($values, $tool);
         $specialAttributes = ['des_id' => 'des','brand_id' => 'brand','so_id' => 'so','usr_id' => 'usr','device_id' => 'device'];
         $names = ['item' => 'Item','des_id' => 'Descripcion','brand_id' => 'Marca','so_id' => 'S Operativo','usr_id' => 'Usuario',
-            'device' => 'N.Dispositivo','serial_number' => 'Numero de serie',
+            'device' => 'N.Dispositivo','serial_number' => 'N de serie',
             'model' => 'Modelo', 'processor' => 'Procesador', 'installation' => 'F.Instalacion',
             'quantity' => 'Cantidad', 'comments' => 'Comentarios'];
         $data = array();

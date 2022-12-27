@@ -36,6 +36,8 @@ export default {
             { text: 'Usuario', value: 'usr.name' },
             { text: 'N.Dispositivo', value: 'device.name' },
             { text: 'N de Serie', value: 'serial_number' },
+            {text: 'Modelo', value: 'model'},
+            {text: 'Procesador', value: 'processor'},
             { text: '', value: 'edit' }
         ]
     }),

@@ -12,7 +12,7 @@ export default {
             processor: { text: 'Procesador', value: 'processor', active: false, key: 'processor' },
             installation: { text: 'F. Instalacion', value: 'installation', active: false, key: 'installation' },
             quantity: { text: 'Cantidad', value: 'quantity', active: false, key: 'quantity' },
-            serialNumber: { text: 'Numero de Serie', value: 'serial_number', active: false, key: 'serial_number' },
+            serialNumber: { text: 'N de Serie', value: 'serial_number', active: false, key: 'serial_number' },
             item: { text: 'Item', value: 'item', active: false, key: 'item' },
             user: { text: 'Usuario', value: 'user.name', active: false, key: 'user_id' },
         },
