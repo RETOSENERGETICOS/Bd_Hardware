@@ -99,7 +99,6 @@ export default {
             model: null,
             processor: null,
             installation: null,
-            min_stock: null,
             quantity: null,
             comments: null
         }
@@ -144,7 +143,6 @@ export default {
                 model: null,
                 processor: null,
                 installation: null,
-                minStock: null,
                 quantity: null,
                 comments: null
             }
