@@ -35,6 +35,7 @@
                         <v-select v-else v-model.trim="tool.device" label="N.Dispositivo" :items="devices" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
                     </div>
                 </div>
+                <div class="form-column">
                     <div class="form-row">
                         <v-text-field v-model="tool.serial" label="N de Serie"></v-text-field>
                     </div>
