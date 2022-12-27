@@ -11,8 +11,6 @@ export default {
             mainLocalization: { text: 'Localizacion principal', value: 'main_localization', active: false, key: 'main_localization' },
             shelfLocalization: { text: 'Localizacion de estante', value: 'shelf_localization', active: false, key: 'shelf_localization' },
             shelf: { text: 'Estante', value: 'shelf', active: false, key: 'shelf' },
-            dispatchable: { text: 'Despachable', value: 'dispatchable', active: false, key: 'dispatchable' },
-            minStock: { text: 'Inventario minimo', value: 'min_stock', active: false, key: 'min_stock' },
             quantity: { text: 'Cantidad', value: 'quantity', active: false, key: 'quantity' },
             serialNumber: { text: 'Numero de Serie', value: 'serial_number', active: false, key: 'serial_number' },
             item: { text: 'Item', value: 'item', active: false, key: 'item' },

@@ -24,14 +24,7 @@
                     <v-col cols="4" v-if="filters.mainLocalization.active"><v-text-field v-model="filter.mainLocalization" label="Localizacion principal" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.shelfLocalization.active"><v-text-field v-model="filter.shelfLocalization" label="Localizacion de estante" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.shelf.active"><v-text-field v-model="filter.shelf" label="Estante" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.dispatchable.active">
-                        <p>Despachable</p>
-                        <v-radio-group v-model="filter.dispatchable" mandatory row>
-                            <v-radio label="Si" :value="1"></v-radio>
-                            <v-radio label="No" :value="0"></v-radio>
-                        </v-radio-group>
-                    </v-col>
-                    <v-col cols="4" v-if="filters.minStock.active"><v-text-field v-model="filter.minStock" label="Inventario minimo" clearable></v-text-field></v-col>
+
                     <v-col cols="4" v-if="filters.quantity.active"><v-text-field v-model.number="filter.quantity" label="Cantidad" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.serialNumber.active"><v-text-field v-model="filter.serialNumber" label="Serie" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.item.active"><v-text-field v-model="filter.item" label="Item" clearable></v-text-field></v-col>
@@ -67,8 +60,6 @@ export default {
             mainLocalization: null,
             shelfLocalization: null,
             shelf: null,
-            dispatchable: false,
-            minStock: 0,
             quantity: 0,
             serialNumber: null,
             item: null,

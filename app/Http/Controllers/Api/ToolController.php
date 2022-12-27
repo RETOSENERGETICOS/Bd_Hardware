@@ -55,9 +55,7 @@ class ToolController extends Controller
             'shelf_localization' => $tool->shelf_localization,
             'shelf' => $tool->shelf,
             'user' => $tool->user,
-            'min_stock' => $tool->min_stock,
             'quantity' => $tool->quantity,
-            'dispatchable' => $tool->dispatchable,
             'comments' => $tool->comments,
             'files' => $tool->files->map(static function(File $file) {
                 return $file->path;
@@ -140,10 +138,8 @@ class ToolController extends Controller
                     'main_localization' => $request->main_localization,
                     'shelf_localization' => $request->shelf_localization,
                     'shelf' => $request->shelf,
-                    'min_stock' => $request->min_stock,
                     'quantity' => $request->quantity,
-                    'comments' => $request->comments,
-                    'dispatchable' => $request->dispatchable
+                    'comments' => $request->comments
                 ]);
                 $oldValues = $tool->getChanges();
                 if (count($oldValues) > 0) {
@@ -183,10 +179,8 @@ class ToolController extends Controller
             'main_localization' => $request->main_localization,
             'shelf_localization' => $request->shelf_localization,
             'shelf' => $request->shelf,
-            'min_stock' => $request->min_stock,
             'quantity' => $request->quantity,
-            'comments' => $request->comments,
-            'dispatchable' => $request->dispatchable
+            'comments' => $request->comments
         ]);
         $tool->update([
             'item' => sprintf('AAA%04d', $tool->id)
@@ -198,9 +192,9 @@ class ToolController extends Controller
 //        dd($values, $tool);
         $specialAttributes = ['des_id' => 'des','brand_id' => 'brand','so_id' => 'so','usr_id' => 'usr','device_id' => 'device'];
         $names = ['item' => 'Item','des_id' => 'Descripcion','brand_id' => 'Marca','so_id' => 'S Operativo','usr_id' => 'Usuario',
-            'device' => 'N.Dispositivo','serial_number' => 'Numero de serie','dispatchable' => 'Despachable',
+            'device' => 'N.Dispositivo','serial_number' => 'Numero de serie',
             'main_localization' => 'Localizacion principal', 'shelf_localization' => 'Localizacion de estante', 'shelf' => 'Estante',
-            'min_stock' => 'Stock minimo', 'quantity' => 'Cantidad', 'comments' => 'Comentarios'];
+            'quantity' => 'Cantidad', 'comments' => 'Comentarios'];
         $data = array();
         foreach (array_keys($values) as $key) {
             if (array_key_exists($key, $specialAttributes)) {

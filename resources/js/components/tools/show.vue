@@ -48,20 +48,10 @@
                             <v-col cols="4">
                                 <v-text-field label="# de estante" v-model="tool.shelf"></v-text-field>
                             </v-col>
-                            <v-col cols="4">
-                                <p>Despachable</p>
-                                <v-radio-group row v-model="tool.dispatchable">
-                                    <v-radio label="Si" :value="true"></v-radio>
-                                    <v-radio label="No" :value="false"></v-radio>
-                                </v-radio-group>
-                            </v-col>
                         </v-row>
                         <v-row>
                             <v-col cols="4">
                                 <v-text-field label="Cantidad" v-model.number="tool.quantity" :rules="[rules.required, v => v > 0 || 'Cantidad invalida']"></v-text-field>
-                            </v-col>
-                            <v-col cols="4">
-                                <v-text-field label="Inventario minimo" v-model="tool.min_stock" disabled></v-text-field>
                             </v-col>
                         </v-row>
                         <v-row>

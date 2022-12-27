@@ -53,12 +53,10 @@ class CreateProductsTable extends Migration
             $table->foreignId('usr_id')->constrained();
             $table->foreignId('device_id')->constrained();
             $table->string('serial_number')->unique()->nullable();
-            $table->boolean('dispatchable')->default(false);
             $table->string('main_localization');
             $table->string('shelf_localization')->nullable();
             $table->string('shelf')->nullable();
             $table->foreignId('user_id')->constrained();
-            $table->decimal('min_stock')->nullable();
             $table->decimal('quantity');
             $table->timestamps();
             $table->softDeletes();
