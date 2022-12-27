@@ -14,7 +14,6 @@ export default {
             quantity: { text: 'Cantidad', value: 'quantity', active: false, key: 'quantity' },
             serialNumber: { text: 'N de Serie', value: 'serial_number', active: false, key: 'serial_number' },
             item: { text: 'Item', value: 'item', active: false, key: 'item' },
-            user: { text: 'Usuario', value: 'user.name', active: false, key: 'user_id' },
         },
         historyMode: false,
         historyItems: [],
