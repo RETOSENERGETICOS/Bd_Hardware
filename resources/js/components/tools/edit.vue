@@ -38,6 +38,7 @@ export default {
             { text: 'N de Serie', value: 'serial_number' },
             {text: 'Modelo', value: 'model'},
             {text: 'Procesador', value: 'processor'},
+            {text: 'F. Instalacion', value: 'installation'},
             { text: '', value: 'edit' }
         ]
     }),
