@@ -51,9 +51,9 @@ class ToolController extends Controller
             'usr' => $tool->usr,
             'device' => $tool->device,
             'serial_number' => $tool->serial_number,
-            'main_localization' => $tool->main_localization,
-            'shelf_localization' => $tool->shelf_localization,
-            'shelf' => $tool->shelf,
+            'model' => $tool->model,
+            'processor' => $tool->processor,
+            'installation' => $tool->installation,
             'user' => $tool->user,
             'quantity' => $tool->quantity,
             'comments' => $tool->comments,
@@ -115,7 +115,7 @@ class ToolController extends Controller
             $usr = $this->getUsr($request->usr);
             $device = $this->getDevice($request->device);
             $oldTool = json_encode($this->getValues($tool->toArray(), $tool));
-            if ($request->main_localization !== $tool->main_localization) {
+            if ($request->usr !== $tool->usr) {
                 $tool->update([ 'quantity' => $tool->quantity - $request->movingQuantity ]);
                 $request->quantity = $request->movingQuantity;
                 $tool = $this->createTool($request);
@@ -135,9 +135,9 @@ class ToolController extends Controller
                     'device_id' => $device->id ?? null,
                     'serial_number' => $request->serial,
                     'size' => $request->size,
-                    'main_localization' => $request->main_localization,
-                    'shelf_localization' => $request->shelf_localization,
-                    'shelf' => $request->shelf,
+                    'model' => $request->model,
+                    'processor' => $request->processor,
+                    'installation' => $request->installation,
                     'quantity' => $request->quantity,
                     'comments' => $request->comments
                 ]);
@@ -176,9 +176,9 @@ class ToolController extends Controller
             'device_id' => $device->id ?? null,
             'serial_number' => $request->serial,
             'size' => $request->size,
-            'main_localization' => $request->main_localization,
-            'shelf_localization' => $request->shelf_localization,
-            'shelf' => $request->shelf,
+            'model' => $request->model,
+            'processor' => $request->processor,
+            'installation' => $request->installation,
             'quantity' => $request->quantity,
             'comments' => $request->comments
         ]);
@@ -193,7 +193,7 @@ class ToolController extends Controller
         $specialAttributes = ['des_id' => 'des','brand_id' => 'brand','so_id' => 'so','usr_id' => 'usr','device_id' => 'device'];
         $names = ['item' => 'Item','des_id' => 'Descripcion','brand_id' => 'Marca','so_id' => 'S Operativo','usr_id' => 'Usuario',
             'device' => 'N.Dispositivo','serial_number' => 'Numero de serie',
-            'main_localization' => 'Localizacion principal', 'shelf_localization' => 'Localizacion de estante', 'shelf' => 'Estante',
+            'model' => 'Modelo', 'processor' => 'Procesador', 'installation' => 'F.Instalacion',
             'quantity' => 'Cantidad', 'comments' => 'Comentarios'];
         $data = array();
         foreach (array_keys($values) as $key) {
@@ -216,9 +216,9 @@ class ToolController extends Controller
             'usr' => $tool->usr,
             'device' => $tool->device,
             'serial_number' => $tool->serial_number,
-            'main_localization' => $tool->main_localization,
-            'shelf_localization' => $tool->shelf_localization,
-            'shelf' => $tool->shelf,
+            'model' => $tool->model,
+            'processor' => $tool->processor,
+            'installation' => $tool->installation,
             'user' => $tool->user,
             'min_stock' => $tool->min_stock,
             'quantity' => $tool->quantity

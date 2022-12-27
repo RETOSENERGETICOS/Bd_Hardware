@@ -38,15 +38,15 @@
                             </v-col>
                         </v-row>
                             <v-col cols="4">
-                                <v-text-field label="Localizacion principal" v-model="tool.main_localization" :rules="[rules.required]"></v-text-field>
+                                <v-text-field label="Modelo" v-model="tool.model" :rules="[rules.required]"></v-text-field>
                             </v-col>
                         </v-row>
                         <v-row>
                             <v-col cols="4">
-                                <v-text-field label="Localizacion de estante" v-model="tool.shelf_localization"></v-text-field>
+                                <v-text-field label="Procesador" v-model="tool.processor"></v-text-field>
                             </v-col>
                             <v-col cols="4">
-                                <v-text-field label="# de estante" v-model="tool.shelf"></v-text-field>
+                                <v-text-field label="F. Instalacion" v-model="tool.installation"></v-text-field>
                             </v-col>
                         </v-row>
                         <v-row>

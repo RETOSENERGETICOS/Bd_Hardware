@@ -40,13 +40,13 @@
                         <v-text-field v-model="tool.serial" label="N de Serie"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <v-text-field v-model="tool.main_localization" label="Localizacion principal" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.model" label="Modelo" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <v-text-field v-model="tool.shelf_localization" label="Localizacion de estante"></v-text-field>
+                        <v-text-field v-model="tool.processor" label="Procesador"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <v-text-field v-model="tool.shelf" label="# Estante"></v-text-field>
+                        <v-text-field v-model="tool.installation" label="F. Instalacion"></v-text-field>
                     </div>
                 </div>
                 <div class="form-column">
@@ -94,9 +94,9 @@ export default {
             usr: null,
             device: null,
             serial: null,
-            main_localization: null,
-            shelf_localization: null,
-            shelf: null,
+            model: null,
+            processor: null,
+            installation: null,
             min_stock: null,
             quantity: null,
             documents: [],

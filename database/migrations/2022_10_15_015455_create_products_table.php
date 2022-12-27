@@ -53,9 +53,9 @@ class CreateProductsTable extends Migration
             $table->foreignId('usr_id')->constrained();
             $table->foreignId('device_id')->constrained();
             $table->string('serial_number')->unique()->nullable();
-            $table->string('main_localization');
-            $table->string('shelf_localization')->nullable();
-            $table->string('shelf')->nullable();
+            $table->string('model');
+            $table->string('processor')->nullable();
+            $table->string('installation')->nullable();
             $table->foreignId('user_id')->constrained();
             $table->decimal('quantity');
             $table->timestamps();
