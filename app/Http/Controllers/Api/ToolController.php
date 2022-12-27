@@ -183,7 +183,7 @@ class ToolController extends Controller
             'comments' => $request->comments
         ]);
         $tool->update([
-            'item' => sprintf('AAA%04d', $tool->id)
+            'item' => sprintf('HDW%04d', $tool->id)
         ]);
         return $tool->refresh();
     }
