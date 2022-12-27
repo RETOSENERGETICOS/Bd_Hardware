@@ -42,14 +42,11 @@ export default {
         headers: [
             {text: 'ITEM', value: 'item'},
             {text: 'Descripcion', value: 'description'},
-            {text: 'Dimension Principal', value: 'measurement'},
             {text: 'Marca', value: 'brand.name'},
             {text: 'S Operativo', value: 'so.name'},
             {text: 'Usuario', value: 'usr.name'},
             {text: 'N.Dispositivo', value: 'device.name'},
             {text: '# Serie', value: 'serial_number'},
-            {text: 'Vencimiento de calibracion', value: 'calibration_expiration'},
-            {text: 'Sujeto a validacion', value: 'has_validation'},
             {text: '', value: 'edit'}
         ]
     }),

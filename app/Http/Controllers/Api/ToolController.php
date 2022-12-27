@@ -30,15 +30,12 @@ class ToolController extends Controller
                 return [
                     'id' => $tool->id,
                     'item' => $tool->item,
-                    'measurement' => $tool->measurement,
                     'des' => $tool->des,
                     'brand' => $tool->brand,
                     'so' => $tool->so,
                     'usr' => $tool->usr,
                     'device' => $tool->device,
-                    'serial_number' => $tool->serial_number,
-                    'calibration_expiration' => $tool->calibration_expiration,
-                    'has_validation' => $tool->has_validation
+                    'serial_number' => $tool->serial_number
                 ];
             })
         );
@@ -48,15 +45,12 @@ class ToolController extends Controller
         return response()->json([
             'id' => $tool->id,
             'item' => $tool->item,
-            'measurement' => $tool->measurement,
             'des' => $tool->des,
             'brand' => $tool->brand,
             'so' => $tool->so,
             'usr' => $tool->usr,
             'device' => $tool->device,
             'serial_number' => $tool->serial_number,
-            'calibration_expiration' => $tool->calibration_expiration,
-            'has_validation' => $tool->has_validation,
             'main_localization' => $tool->main_localization,
             'shelf_localization' => $tool->shelf_localization,
             'shelf' => $tool->shelf,
@@ -143,12 +137,9 @@ class ToolController extends Controller
                     'device_id' => $device->id ?? null,
                     'serial_number' => $request->serial,
                     'size' => $request->size,
-                    'calibration_expiration' => $request->has_validation ? $request->calibration_expiration : null,
-                    'has_validation' => $request->has_validation,
                     'main_localization' => $request->main_localization,
                     'shelf_localization' => $request->shelf_localization,
                     'shelf' => $request->shelf,
-                    'measurement' => $request->measurement,
                     'min_stock' => $request->min_stock,
                     'quantity' => $request->quantity,
                     'comments' => $request->comments,
@@ -189,12 +180,9 @@ class ToolController extends Controller
             'device_id' => $device->id ?? null,
             'serial_number' => $request->serial,
             'size' => $request->size,
-            'calibration_expiration' => $request->has_validation ? $request->calibration_expiration : null,
-            'has_validation' => $request->has_validation,
             'main_localization' => $request->main_localization,
             'shelf_localization' => $request->shelf_localization,
             'shelf' => $request->shelf,
-            'measurement' => $request->measurement,
             'min_stock' => $request->min_stock,
             'quantity' => $request->quantity,
             'comments' => $request->comments,
@@ -210,9 +198,9 @@ class ToolController extends Controller
 //        dd($values, $tool);
         $specialAttributes = ['des_id' => 'des','brand_id' => 'brand','so_id' => 'so','usr_id' => 'usr','device_id' => 'device'];
         $names = ['item' => 'Item','des_id' => 'Descripcion','brand_id' => 'Marca','so_id' => 'S Operativo','usr_id' => 'Usuario',
-            'device' => 'N.Dispositivo','serial_number' => 'Numero de serie','calibration_expiration' => 'Expiracion de calibracion','dispatchable' => 'Despachable',
-            'has_validation' => 'Sujeto a validacion', 'main_localization' => 'Localizacion principal', 'shelf_localization' => 'Localizacion de estante', 'shelf' => 'Estante',
-            'measurement' => 'Medida', 'min_stock' => 'Stock minimo', 'quantity' => 'Cantidad', 'comments' => 'Comentarios'];
+            'device' => 'N.Dispositivo','serial_number' => 'Numero de serie','dispatchable' => 'Despachable',
+            'main_localization' => 'Localizacion principal', 'shelf_localization' => 'Localizacion de estante', 'shelf' => 'Estante',
+            'min_stock' => 'Stock minimo', 'quantity' => 'Cantidad', 'comments' => 'Comentarios'];
         $data = array();
         foreach (array_keys($values) as $key) {
             if (array_key_exists($key, $specialAttributes)) {
@@ -229,14 +217,11 @@ class ToolController extends Controller
             'id' => $tool->id,
             'item' => $tool->item,
             'des' => $tool->des,
-            'measurement' => $tool->measurement,
             'brand' => $tool->brand,
             'so' => $tool->so,
             'usr' => $tool->usr,
             'device' => $tool->device,
             'serial_number' => $tool->serial_number,
-            'calibration_expiration' => $tool->calibration_expiration,
-            'has_validation' => $tool->has_validation,
             'main_localization' => $tool->main_localization,
             'shelf_localization' => $tool->shelf_localization,
             'shelf' => $tool->shelf,

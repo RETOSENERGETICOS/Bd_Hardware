@@ -37,22 +37,6 @@
                                 <v-text-field label="# Serie" v-model="tool.serial" disabled></v-text-field>
                             </v-col>
                         </v-row>
-                        <v-row>
-                            <v-col cols="4">
-                                <p>Sujeto a validacion</p>
-                                <v-radio-group v-model="tool.has_validation" row disabled>
-                                    <v-radio label="Si" :value="true"></v-radio>
-                                    <v-radio label="No" :value="false"></v-radio>
-                                </v-radio-group>
-                            </v-col>
-                            <v-col cols="4">
-                                <v-menu ref="datePickerMenu" v-model="menu" :close-on-content-click="false" offset-y min-width="auto">
-                                    <template v-slot:activator="{on, attrs}">
-                                        <v-text-field v-model="tool.calibration_expiration" label="Vencimiento de calibracion" v-on="on" v-bind="attrs" :disabled="!tool.has_validation"></v-text-field>
-                                    </template>
-                                    <v-date-picker v-model="tool.calibration_expiration" label="Vencimiento de calibracion" no-title></v-date-picker>
-                                </v-menu>
-                            </v-col>
                             <v-col cols="4">
                                 <v-text-field label="Localizacion principal" v-model="tool.main_localization" :rules="[rules.required]"></v-text-field>
                             </v-col>
@@ -75,9 +59,6 @@
                         <v-row>
                             <v-col cols="4">
                                 <v-text-field label="Cantidad" v-model.number="tool.quantity" :rules="[rules.required, v => v > 0 || 'Cantidad invalida']"></v-text-field>
-                            </v-col>
-                            <v-col cols="4">
-                                <v-text-field label="Unidad de medida" v-model="tool.measurement" :rules="[rules.required]" disabled></v-text-field>
                             </v-col>
                             <v-col cols="4">
                                 <v-text-field label="Inventario minimo" v-model="tool.min_stock" disabled></v-text-field>
@@ -140,14 +121,11 @@ export default {
                     id: this.tool.id,
                     item: this.tool.item,
                     des: this.tool.des,
-                    measurement: this.tool.measurement,
                     brand: this.tool.brand,
                     so: this.tool.so,
                     usr: this.tool.device,
                     device: this.tool.model,
-                    serial_number: this.tool.serial_number,
-                    calibration_expiration: this.tool.calibration_expiration,
-                    has_validation: this.tool.has_validation
+                    serial_number: this.tool.serial_number
                 }
                 this.$emit('updated', newItem)
                 this.show = false

@@ -39,21 +39,6 @@
                         <v-text-field v-model="tool.serial" label="N de Serie"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <p>Sujeto a validacion</p>
-                        <v-radio-group v-model="tool.has_validation" mandatory>
-                            <v-radio label="Si" :value="true"></v-radio>
-                            <v-radio label="No" :value="false"></v-radio>
-                        </v-radio-group>
-                    </div>
-                    <div class="form-row">
-                        <v-menu ref="datePickerMenu" v-model="menu" :close-on-content-click="false" offset-y min-width="auto">
-                            <template v-slot:activator="{on, attrs}">
-                                <v-text-field v-model="tool.calibration_expiration" label="Vencimiento de calibracion" v-on="on" v-bind="attrs" :disabled="!tool.has_validation"></v-text-field>
-                            </template>
-                            <v-date-picker v-model="tool.calibration_expiration" label="Vencimiento de calibracion" no-title></v-date-picker>
-                        </v-menu>
-                    </div>
-                    <div class="form-row">
                         <v-text-field v-model="tool.main_localization" label="Localizacion principal" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">
@@ -73,9 +58,6 @@
                     </div>
                     <div class="form-row">
                         <v-text-field v-model.number="tool.quantity" label="Cantidad" :rules="[rules.required, v => v > 0 || 'Cantidad invalida']"></v-text-field>
-                    </div>
-                    <div class="form-row">
-                        <v-text-field v-model="tool.measurement" label="Unidad de medida" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">
                         <v-text-field v-model="tool.min_stock" label="Inventario minimo"></v-text-field>
@@ -121,12 +103,9 @@ export default {
             usr: null,
             device: null,
             serial: null,
-            calibration_expiration: null,
-            has_validation: false,
             main_localization: null,
             shelf_localization: null,
             shelf: null,
-            measurement: null,
             min_stock: null,
             quantity: null,
             documents: [],
@@ -170,12 +149,9 @@ export default {
                 usr: null,
                 device: null,
                 serial: null,
-                calibrationExpiration: null,
-                hasValidation: false,
                 mainLocalization: null,
                 shelfLocalization: null,
                 shelf: null,
-                measurement: null,
                 minStock: null,
                 quantity: null,
                 documents: [],
