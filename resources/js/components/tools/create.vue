@@ -50,17 +50,7 @@
                 </div>
                 <div class="form-column">
                     <div class="form-row">
-                        <p>Despachable</p>
-                        <v-radio-group mandatory>
-                            <v-radio label="Si" :value="true"></v-radio>
-                            <v-radio label="No" :value="false"></v-radio>
-                        </v-radio-group>
-                    </div>
-                    <div class="form-row">
                         <v-text-field v-model.number="tool.quantity" label="Cantidad" :rules="[rules.required, v => v > 0 || 'Cantidad invalida']"></v-text-field>
-                    </div>
-                    <div class="form-row">
-                        <v-text-field v-model="tool.min_stock" label="Inventario minimo"></v-text-field>
                     </div>
                     <div class="form-row">
                         <v-textarea v-model="tool.comments" label="Comentarios"></v-textarea>
