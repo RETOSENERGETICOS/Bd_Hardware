@@ -46,7 +46,12 @@
                                 <v-text-field label="Procesador" v-model="tool.processor"></v-text-field>
                             </v-col>
                             <v-col cols="4">
-                                <v-text-field label="F. Instalacion" v-model="tool.installation"></v-text-field>
+                                <v-menu ref="datePickerMenu" v-model="menu" :close-on-content-click="false" offset-y min-width="auto">
+                                    <template v-slot:activator="{on, attrs}">
+                                        <v-text-field v-model="tool.installation" label="F. Instalacion" v-on="on" v-bind="attrs"></v-text-field>
+                                    </template>
+                                    <v-date-picker v-model="tool.installation" label="F. Instalacion" no-title></v-date-picker>
+                                </v-menu>
                             </v-col>
                         </v-row>
                         <v-row>

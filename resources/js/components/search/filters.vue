@@ -23,8 +23,14 @@
 
                     <v-col cols="4" v-if="filters.model.active"><v-text-field v-model="filter.model" label="Modelo" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.processor.active"><v-text-field v-model="filter.processor" label="Procesador" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.installation.active"><v-text-field v-model="filter.installation" label="F. Instalacion" clearable></v-text-field></v-col>
-
+                    <v-col cols="4" v-if="filters.installation.active">
+                        <v-menu ref="datePickerMenu" v-model="menu" :close-on-content-click="false" offset-y min-width="auto">
+                            <template v-slot:activator="{on, attrs}">
+                                <v-text-field v-model="filter.installation" label="F. Instalacion" v-on="on" v-bind="attrs"></v-text-field>
+                            </template>
+                            <v-date-picker v-model="filter.installation" label="F. Instalacion" no-title></v-date-picker>
+                        </v-menu>
+                    </v-col>
                     <v-col cols="4" v-if="filters.quantity.active"><v-text-field v-model.number="filter.quantity" label="Cantidad" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.serialNumber.active"><v-text-field v-model="filter.serialNumber" label="Serie" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.item.active"><v-text-field v-model="filter.item" label="Item" clearable></v-text-field></v-col>
