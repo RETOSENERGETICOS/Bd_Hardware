@@ -16,6 +16,7 @@
                     <v-toolbar-title>Herramientas</v-toolbar-title>
                     <v-divider class="mx-4" inset vertical></v-divider>
                     <v-spacer></v-spacer>
+                    <v-text-field v-model="search" label="Buscar/Search" hide-details></v-text-field>
                     <v-btn color="error" :disabled="selected.length === 0" @click="dialog = true">Eliminar/Delete</v-btn>
                 </v-toolbar>
             </template>
