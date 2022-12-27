@@ -15,12 +15,12 @@
             <div class="form-container">
                 <div class="form-column">
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.des" label="Descripcion" :items="dess" item-text="name" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.des" label="Descripcion" :items="dess" item-text="name" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.des" label="Descripcion" :items="dess" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.des" label="Descripcion" :items="dess" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.brand" label="Marca" :items="brands" item-text="name" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.brand" label="Marca" :items="brands" item-text="name" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.brand" label="Marca" :items="brands" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.brand" label="Marca" :items="brands" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
                         <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.so" label="S Operativo" :items="sos" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
@@ -31,13 +31,13 @@
                         <v-select v-else v-model.trim="tool.usr" label="Usuario" :items="usrs" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.device" label="N.Dispositivo" :items="devices" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.device" label="N.Dispositivo" :items="devices" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.device" label="N.Dispositivo" :items="devices" item-text="name" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.device" label="N.Dispositivo" :items="devices" item-text="name" clearable item-value="name"></v-select>
                     </div>
                 </div>
                 <div class="form-column">
                     <div class="form-row">
-                        <v-text-field v-model="tool.serial" label="N de Serie"></v-text-field>
+                        <v-text-field v-model="tool.serial" label="N de Serie" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">
                         <v-text-field v-model="tool.model" label="Modelo" :rules="[rules.required]"></v-text-field>
