@@ -15,48 +15,48 @@
             <div class="form-container">
                 <div class="form-column">
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.des" label="Descripcion" :items="dess" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.des" label="Descripcion" :items="dess" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.des" label="Descripcion/Description" :items="dess" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.des" label="Descripcion/Description" :items="dess" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.brand" label="Marca" :items="brands" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.brand" label="Marca" :items="brands" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.brand" label="Marca/Brand" :items="brands" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.brand" label="Marca/Brand" :items="brands" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.so" label="S Operativo" :items="sos" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.so" label="S Operativo" :items="sos" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.so" label="S Operativo/DOS" :items="sos" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.so" label="S Operativo/DOS" :items="sos" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.usr" label="Usuario" :items="usrs" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.usr" label="Usuario" :items="usrs" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.usr" label="Usuario/User" :items="usrs" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.usr" label="Usuario/User" :items="usrs" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.device" label="N.Dispositivo" :items="devices" item-text="name" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.device" label="N.Dispositivo" :items="devices" item-text="name" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.device" label="N Dispositivo/C Name" :items="devices" item-text="name" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.device" label="N Dispositivo/C Name" :items="devices" item-text="name" clearable item-value="name"></v-select>
                     </div>
                 </div>
                 <div class="form-column">
                     <div class="form-row">
-                        <v-text-field v-model="tool.serial" label="N de Serie" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.serial" label="N de Serie/Serial S" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <v-text-field v-model="tool.model" label="Modelo" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.model" label="Modelo/Model" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <v-text-field v-model="tool.processor" label="Procesador"></v-text-field>
+                        <v-text-field v-model="tool.processor" label="Procesador/Proc Unit"></v-text-field>
                     </div>
                     <div class="form-row">
                         <v-menu ref="datePickerMenu" v-model="menu" :close-on-content-click="false" offset-y min-width="auto">
                             <template v-slot:activator="{on, attrs}">
-                                <v-text-field v-model="tool.installation" label="F. Instalacion" v-on="on" v-bind="attrs"></v-text-field>
+                                <v-text-field v-model="tool.installation" label="F Instalacion/Set Up D" v-on="on" v-bind="attrs"></v-text-field>
                             </template>
-                            <v-date-picker v-model="tool.installation" label="F. Instalacion" no-title></v-date-picker>
+                            <v-date-picker v-model="tool.installation" label="F Instalacion/Set Up D" no-title></v-date-picker>
                         </v-menu>
                     </div>
                 </div>
                 <div class="form-column">
                     <div class="form-row">
-                        <v-text-field v-model.number="tool.quantity" label="Cantidad" :rules="[rules.required, v => v > 0 || 'Cantidad invalida']"></v-text-field>
+                        <v-text-field v-model.number="tool.quantity" label="Cantidad/QTY" :rules="[rules.required, v => v > 0 || 'Cantidad invalida']"></v-text-field>
                     </div>
                     <div class="form-row">
                         <v-textarea v-model="tool.comments" label="Comentarios"></v-textarea>

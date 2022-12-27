@@ -191,10 +191,10 @@ class ToolController extends Controller
     private function getValues($values, Tool $tool) {
 //        dd($values, $tool);
         $specialAttributes = ['des_id' => 'des','brand_id' => 'brand','so_id' => 'so','usr_id' => 'usr','device_id' => 'device'];
-        $names = ['item' => 'Item','des_id' => 'Descripcion','brand_id' => 'Marca','so_id' => 'S Operativo','usr_id' => 'Usuario',
-            'device' => 'N.Dispositivo','serial_number' => 'N de serie',
-            'model' => 'Modelo', 'processor' => 'Procesador', 'installation' => 'F.Instalacion',
-            'quantity' => 'Cantidad', 'comments' => 'Comentarios'];
+        $names = ['item' => 'Item','des_id' => 'Descripcion/Description','brand_id' => 'Marca/Brand','so_id' => 'S Operativo/DOS','usr_id' => 'Usuario/User',
+            'device' => 'N Dispositivo/C Name','serial_number' => 'N de serie/Serial S',
+            'model' => 'Modelo/Model', 'processor' => 'Procesador/Proc Unit', 'installation' => 'F Instalacion/Set Up D',
+            'quantity' => 'Cantidad/QTY', 'comments' => 'Comentarios'];
         $data = array();
         foreach (array_keys($values) as $key) {
             if (array_key_exists($key, $specialAttributes)) {
