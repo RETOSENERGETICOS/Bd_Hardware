@@ -119,7 +119,7 @@ export default {
             if (response.status === 200) {
                 this.snackbar = {
                     active: true,
-                    message: 'Herramienta registrada',
+                    message: 'Equipo registrado',
                     color: 'success'
                 }
                 this.clearForm()
