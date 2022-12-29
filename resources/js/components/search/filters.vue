@@ -19,16 +19,16 @@
                     <v-col cols="4" v-if="filters.brand.active"><v-select v-model="filter.brand" label="Marca/Brand" :items="brands" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.usr.active"><v-select v-model="filter.usr" label="Usuario/User" :items="usrs" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.so.active"><v-select v-model="filter.so" label="S Operativo/DOS" :items="sos" item-text="name" return-object clearable></v-select></v-col>
-                    <v-col cols="4" v-if="filters.device.active"><v-select v-model="filter.device" label="N.Dispositivo/C Name" :items="devices" item-text="name" return-object clearable></v-select></v-col>
+                    <v-col cols="4" v-if="filters.device.active"><v-select v-model="filter.device" label="N Dispositivo/C Name" :items="devices" item-text="name" return-object clearable></v-select></v-col>
 
                     <v-col cols="4" v-if="filters.model.active"><v-text-field v-model="filter.model" label="Modelo/Model" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.processor.active"><v-text-field v-model="filter.processor" label="Procesador/Proc Unit" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.installation.active">
                         <v-menu ref="datePickerMenu" v-model="menu" :close-on-content-click="false" offset-y min-width="auto">
                             <template v-slot:activator="{on, attrs}">
-                                <v-text-field v-model="filter.installation" label="F. Instalacion/Set Up D" v-on="on" v-bind="attrs"></v-text-field>
+                                <v-text-field v-model="filter.installation" label="F Instalacion/Set Up D" v-on="on" v-bind="attrs"></v-text-field>
                             </template>
-                            <v-date-picker v-model="filter.installation" label="F. Instalacion/Set Up D" no-title></v-date-picker>
+                            <v-date-picker v-model="filter.installation" label="F Instalacion/Set Up D" no-title></v-date-picker>
                         </v-menu>
                     </v-col>
                     <v-col cols="4" v-if="filters.quantity.active"><v-text-field v-model.number="filter.quantity" label="Cantidad/QTY" clearable></v-text-field></v-col>
