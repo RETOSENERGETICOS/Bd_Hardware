@@ -15,11 +15,11 @@
                     </v-col>
                 </v-row>
                 <v-row>
-                    <v-col cols="4" v-if="filters.des.active"><v-select v-model="filter.des" label="Descripcion" :items="dess" item-text="name" return-object clearable></v-select></v-col>
-                    <v-col cols="4" v-if="filters.brand.active"><v-select v-model="filter.brand" label="Marca" :items="brands" item-text="name" return-object clearable></v-select></v-col>
-                    <v-col cols="4" v-if="filters.usr.active"><v-select v-model="filter.usr" label="Usuario" :items="usrs" item-text="name" return-object clearable></v-select></v-col>
-                    <v-col cols="4" v-if="filters.so.active"><v-select v-model="filter.so" label="S Operativo" :items="sos" item-text="name" return-object clearable></v-select></v-col>
-                    <v-col cols="4" v-if="filters.device.active"><v-select v-model="filter.device" label="N Dispositivo" :items="devices" item-text="name" return-object clearable></v-select></v-col>
+                    <v-col cols="4" v-if="filters.des.active"><v-select v-model="filter.des" label="Descripcion/Description" :items="dess" item-text="name" return-object clearable></v-select></v-col>
+                    <v-col cols="4" v-if="filters.brand.active"><v-select v-model="filter.brand" label="Marca/Brand" :items="brands" item-text="name" return-object clearable></v-select></v-col>
+                    <v-col cols="4" v-if="filters.usr.active"><v-select v-model="filter.usr" label="Usuario/User" :items="usrs" item-text="name" return-object clearable></v-select></v-col>
+                    <v-col cols="4" v-if="filters.so.active"><v-select v-model="filter.so" label="S Operativo/DOS" :items="sos" item-text="name" return-object clearable></v-select></v-col>
+                    <v-col cols="4" v-if="filters.device.active"><v-select v-model="filter.device" label="N Dispositivo/C Name" :items="devices" item-text="name" return-object clearable></v-select></v-col>
 
                     <v-col cols="4" v-if="filters.model.active"><v-text-field v-model="filter.model" label="Modelo" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.processor.active"><v-text-field v-model="filter.processor" label="Procesador" clearable></v-text-field></v-col>
