@@ -17,21 +17,21 @@
                     <v-form v-model="valid">
                         <v-row>
                             <v-col cols="4">
-                                <v-combobox label="Descripcion" v-model="tool.des" item-text="name" :items="dess" clearable item-value="name"></v-combobox>
+                                <v-combobox label="Descripcion/Description" v-model="tool.des" item-text="name" :items="dess" clearable item-value="name"></v-combobox>
                             </v-col>
                             <v-col cols="4">
-                                <v-combobox label="Marca" v-model="tool.brand" item-text="name" :items="brands" clearable item-value="name"></v-combobox>
+                                <v-combobox label="Marca/Brand" v-model="tool.brand" item-text="name" :items="brands" clearable item-value="name"></v-combobox>
                             </v-col>
                             <v-col cols="4">
-                                <v-combobox label="S Operativo" v-model="tool.so" item-text="name" :items="sos" :rules="[rules.required]" clearable item-value="name" disabled></v-combobox>
+                                <v-combobox label="S Operativo/DOS" v-model="tool.so" item-text="name" :items="sos" :rules="[rules.required]" clearable item-value="name" disabled></v-combobox>
                             </v-col>
                         </v-row>
                         <v-row>
                             <v-col cols="4">
-                                <v-combobox label="Usuario" v-model="tool.usr" item-text="name" :items="usrs" item-value="name" disabled></v-combobox>
+                                <v-combobox label="Usuario/User" v-model="tool.usr" item-text="name" :items="usrs" item-value="name" disabled></v-combobox>
                             </v-col>
                             <v-col cols="4">
-                                <v-combobox label="N Dispositivo" v-model="tool.device" item-text="name" :items="devices" item-value="name" disabled></v-combobox>
+                                <v-combobox label="N Dispositivo/C Name" v-model="tool.device" item-text="name" :items="devices" item-value="name" disabled></v-combobox>
                             </v-col>
                             <v-col cols="4">
                                 <v-text-field label="N de Serie" v-model="tool.serial" disabled></v-text-field>
