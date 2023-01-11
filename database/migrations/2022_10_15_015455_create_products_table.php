@@ -32,7 +32,7 @@ class CreateProductsTable extends Migration
            $table->timestamps();
         });
 
-        Schema::create('usr', static function(Blueprint $table) {
+        Schema::create('usrs', static function(Blueprint $table) {
            $table->id();
            $table->string('name');
            $table->timestamps();
