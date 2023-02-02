@@ -13,7 +13,7 @@
         <v-data-table :headers="headers" :items="items" show-select v-model="selected" :loading="loading">
             <template v-slot:top>
                 <v-toolbar flat>
-                    <v-toolbar-title>Equipos de Hardware</v-toolbar-title>
+                    <v-toolbar-title>Hardware</v-toolbar-title>
                     <v-divider class="mx-4" inset vertical></v-divider>
                     <v-spacer></v-spacer>
                     <v-text-field v-model="search" label="Buscar/Search" hide-details></v-text-field>

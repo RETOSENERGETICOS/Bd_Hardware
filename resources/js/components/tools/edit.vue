@@ -5,7 +5,7 @@
         <v-data-table :headers="headers" :items="items" @click:row="viewTool" :search="search">
             <template #top>
                 <v-toolbar flat>
-                    <v-toolbar-title>Equipos de Hardware</v-toolbar-title>
+                    <v-toolbar-title>Hardware</v-toolbar-title>
                     <v-divider inset vertical class="mx-4"></v-divider>
                     <v-spacer></v-spacer>
                     <v-text-field v-model="search" label="Buscar/Search" hide-details></v-text-field>
