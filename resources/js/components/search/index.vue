@@ -5,7 +5,7 @@
         <v-data-table v-if="!historyMode" :headers="activeFilters" :loading="loading" :items="filterableItems">
             <template #top>
                 <v-toolbar flat>
-                    <v-toolbar-title>Equipos de Hardware</v-toolbar-title>
+                    <v-toolbar-title>Hardware</v-toolbar-title>
                     <v-divider class="mx-4" inset vertical></v-divider>
                     <v-spacer></v-spacer>
                     <v-btn icon @click="exportExcel" color="success" :disabled="filterableItems.length === 0"><v-icon>mdi-file-excel-box</v-icon></v-btn>
