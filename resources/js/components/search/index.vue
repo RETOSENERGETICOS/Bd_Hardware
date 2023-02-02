@@ -10,7 +10,7 @@
                     <v-spacer></v-spacer>
                     <v-btn icon @click="exportExcel" color="success" :disabled="filterableItems.length === 0"><v-icon>mdi-file-excel-box</v-icon></v-btn>
                     <v-btn icon @click="exportPdf" color="error" :disabled="filterableItems.length === 0"><v-icon>mdi-file-pdf-box</v-icon></v-btn>
-                    <v-text-field v-model="search" label="Buscar" hide-details></v-text-field>
+                    <v-text-field v-model="search" label="Buscar/Search" hide-details></v-text-field>
                 </v-toolbar>
             </template>
         </v-data-table>
