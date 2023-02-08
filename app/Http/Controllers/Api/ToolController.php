@@ -194,7 +194,7 @@ class ToolController extends Controller
         $names = ['item' => 'Item','des_id' => 'Descripcion/Description','brand_id' => 'Marca/Brand','so_id' => 'S Operativo/DOS','usr_id' => 'Usuario/User',
             'device' => 'N Dispositivo/C Name','serial_number' => 'N de serie/Serial S',
             'model' => 'Modelo/Model', 'processor' => 'Procesador/Proc Unit', 'installation' => 'F Instalacion/Set Up D',
-            'quantity' => 'Cantidad/QTY', 'comments' => 'Comentarios'];
+            'quantity' => 'Cantidad/QTY', 'comments' => 'Comentarios/Comments'];
         $data = array();
         foreach (array_keys($values) as $key) {
             if (array_key_exists($key, $specialAttributes)) {

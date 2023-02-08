@@ -64,7 +64,7 @@
                                 <v-text-field label="Cantidad a mover" v-model.number="movingQuantity" type="number"></v-text-field>
                             </v-col>
                             <v-col cols="4">
-                                <v-textarea label="Comentarios" v-model="tool.comments" :rows="1"></v-textarea>
+                                <v-textarea label="Comentarios/Comments" v-model="tool.comments" :rows="1"></v-textarea>
                             </v-col>
                         </v-row>
                     </v-form>

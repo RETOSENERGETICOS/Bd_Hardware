@@ -59,7 +59,7 @@
                         <v-text-field v-model.number="tool.quantity" label="Cantidad/QTY" :rules="[rules.required, v => v > 0 || 'Cantidad invalida']"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <v-textarea v-model="tool.comments" label="Comentarios"></v-textarea>
+                        <v-textarea v-model="tool.comments" label="Comentarios/Comments"></v-textarea>
                     </div>
                 </div>
             </div>
