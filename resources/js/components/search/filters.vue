@@ -49,7 +49,7 @@ export default {
     name: "filters",
     data: () => ({
         panel: 0,
-        des: [{id: 0, name: 'TODOS'}],
+        dess: [{id: 0, name: 'TODOS'}],
         brands: [{id: 0, name: 'TODOS'}],
         usrs: [{id: 0, name: 'TODOS'}],
         sos: [{id: 0, name: 'TODOS'}],
